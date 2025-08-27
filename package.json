@@ -1,14 +1,27 @@
 {
   "name": "tree-sitter-arizona",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tree-sitter generate",
+    "build:wasm": "tree-sitter build --wasm",
+    "test": "tree-sitter test",
+    "test:update": "tree-sitter test --update",
+    "test:debug": "tree-sitter test --debug",
+    "parse": "tree-sitter parse",
+    "playground": "npm run build:wasm && tree-sitter playground",
+    "validate": "npm run build && npm run test"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "arizona",
+    "herl",
+    "erlang",
+    "html"
+  ],
+  "author": "William Fank Thomé <will@iamtho.me>",
+  "license": "Apache-2.0",
   "devDependencies": {
     "tree-sitter-cli": "^0.25.8"
   }
