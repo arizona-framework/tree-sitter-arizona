@@ -1,0 +1,63 @@
+{% FIXME: Add proper syntax highlighting assertions when Tree-sitter comment handling is resolved %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{page_title}</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="{get_meta_description()}">
+</head>
+
+<body>
+  <header>
+    <h1>Welcome {user_name}!</h1>
+    <nav>
+      <ul>
+        {lists:map(fun(Item) ->
+        {id, Name, Url} = Item,
+        io_lib:format("<li><a href=\"~s\">~s</a></li>", [Url, Name])
+        end, nav_items)}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      {case user_status of
+      authenticated ->
+      User = get_user(),
+      render_user_dashboard(User);
+      guest ->
+      "<p>Please <a href=\"/login\">log in</a> to continue</p>"
+      end}
+    </section>
+
+    <section class="data">
+      <h2>Items</h2>
+      <div class="grid">
+        {[begin
+        {Id, Title, Content} = Item,
+        io_lib:format(
+        "<div class=\"card\" data-id=\"~p\">"
+          "<h3>~s</h3>"
+          "<p>~s</p>"
+          "</div>", [Id, Title, Content])
+        end || Item <- items]} </div>
+    </section>
+
+    {%% Nested comment with braces {like this} %}
+    <aside>
+      <h3>Statistics</h3>
+      <p>Total items: {length(items)}</p>
+      <p>Online users: {count_online_users()}</p>
+      { % Another comment style }
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Arizona Framework</p>
+  </footer>
+</body>
+
+</html>

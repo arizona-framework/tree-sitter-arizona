@@ -10,6 +10,10 @@
 module.exports = grammar({
   name: "arizona",
 
+  extras: _$ => [
+    /\s/,  // whitespace
+  ],
+
   rules: {
     source_file: $ => repeat($._item),
 
@@ -18,7 +22,7 @@ module.exports = grammar({
       $.dynamic
     ),
 
-    static: $ => /[^{}]+/,
+    static: _$ => /[^{}]+/,
 
     dynamic: $ => seq(
       '{',

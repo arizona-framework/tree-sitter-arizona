@@ -1,0 +1,8 @@
+; HTML injection for static content
+((static) @injection.content
+ (#set! injection.language "html"))
+
+; Erlang injection for dynamic content
+((dynamic) @injection.content
+ (#set! injection.language "erlang")
+ (#offset! @injection.content 0 1 0 -1))
