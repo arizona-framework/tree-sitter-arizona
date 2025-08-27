@@ -1,0 +1,77 @@
+==================
+Simple Erlang tuple
+==================
+
+<p>User: {{name, age}}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Nested Erlang tuples
+==================
+
+<p>Data: {{user, {name, age}}, status}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Deep nested tuples
+==================
+
+<div>{{a, {b, {c, d}}}, {e, f}}</div>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Tuple with atoms and variables
+==================
+
+<span>{{ok, Value}, {error, Reason}}</span>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Mixed tuple and function call
+==================
+
+<p>{lists:map(fun(X) -> {id, X} end, Items)}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Empty tuple
+==================
+
+<p>Empty: {{}}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))

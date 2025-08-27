@@ -11,7 +11,24 @@ module.exports = grammar({
   name: "arizona",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    source_file: $ => repeat($._item),
+
+    _item: $ => choice(
+      $.static,
+      $.dynamic
+    ),
+
+    static: $ => /[^{}]+/,
+
+    dynamic: $ => seq(
+      '{',
+      optional($._dynamic_expression),
+      '}'
+    ),
+
+    _dynamic_expression: $ => repeat1(choice(
+      /[^{}]+/,
+      seq('{', optional($._dynamic_expression), '}')
+    ))
   }
 });
