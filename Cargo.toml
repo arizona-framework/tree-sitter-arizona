@@ -2,7 +2,7 @@
 name = "tree-sitter-arizona"
 description = "Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code"
 version = "0.1.0"
-authors = ["William Fank Thomé <will@iamtho.me>"]
+authors = ["William Fank Thomé <willilamthome@hotmail.com>"]
 license = " Apache-2.0"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "arizona"]

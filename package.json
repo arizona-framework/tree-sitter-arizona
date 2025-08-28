@@ -9,8 +9,8 @@
     "test:update": "tree-sitter test --update",
     "test:debug": "tree-sitter test --debug",
     "parse": "tree-sitter parse",
-    "playground": "npm run build:wasm && tree-sitter playground",
-    "validate": "npm run build && npm run test"
+    "query": "tree-sitter query queries/highlights.scm",
+    "playground": "npm run build:wasm && tree-sitter playground"
   },
   "keywords": [
     "tree-sitter",
@@ -20,7 +20,7 @@
     "erlang",
     "html"
   ],
-  "author": "William Fank Thomé <will@iamtho.me>",
+  "author": "William Fank Thomé <willilamthome@hotmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
     "tree-sitter-cli": "^0.25.8"

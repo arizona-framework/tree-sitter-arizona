@@ -1,6 +1,6 @@
 /**
  * @file Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code
- * @author William Fank Thomé <will@iamtho.me>
+ * @author William Fank Thomé <willilamthome@hotmail.com>
  * @license  Apache-2.0
  */
 
