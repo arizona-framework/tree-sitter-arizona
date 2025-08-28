@@ -9,7 +9,7 @@
       "file-types": [
         "herl"
       ],
-      "injection-regex": "^arizona$",
+      "injection-regex": "^(arizona|herl)$",
       "class-name": "TreeSitterArizona",
       "highlights": "queries/highlights.scm",
       "injections": "queries/injections.scm"
@@ -17,7 +17,7 @@
   ],
   "metadata": {
     "version": "0.1.0",
-    "license": " Apache-2.0",
+    "license": "Apache-2.0",
     "description": "Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code",
     "authors": [
       {
@@ -27,7 +27,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/arizona-framework/arizona_tree_sitter",
+      "repository": "https://github.com/arizona-framework/tree-sitter-arizona",
       "funding": "https://github.com/sponsors/williamthome"
     }
   },

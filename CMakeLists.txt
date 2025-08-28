@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 project(tree-sitter-arizona
         VERSION "0.1.0"
         DESCRIPTION "Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code"
-        HOMEPAGE_URL "https://github.com/arizona-framework/arizona_tree_sitter"
+        HOMEPAGE_URL "https://github.com/arizona-framework/tree-sitter-arizona"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

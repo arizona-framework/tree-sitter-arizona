@@ -7,7 +7,7 @@ license = " Apache-2.0"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "arizona"]
 categories = ["parser-implementations", "parsing", "text-editors"]
-repository = "https://github.com/arizona-framework/arizona_tree_sitter"
+repository = "https://github.com/arizona-framework/tree-sitter-arizona"
 edition = "2021"
 autoexamples = false
 
