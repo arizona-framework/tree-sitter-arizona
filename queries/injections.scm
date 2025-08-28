@@ -1,3 +1,5 @@
+; extends
+
 ; HTML injection for static content
 ((static) @injection.content
  (#set! injection.language "html"))

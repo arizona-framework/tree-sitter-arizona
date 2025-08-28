@@ -12,9 +12,7 @@
       "injection-regex": "^arizona$",
       "class-name": "TreeSitterArizona",
       "highlights": "queries/highlights.scm",
-      "injections": "queries/injections.scm",
-      "locals": "queries/locals.scm",
-      "tags": "queries/tags.scm"
+      "injections": "queries/injections.scm"
     }
   ],
   "metadata": {
