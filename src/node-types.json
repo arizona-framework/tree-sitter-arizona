@@ -1,12 +1,48 @@
 [
   {
-    "type": "source_file",
+    "type": "dynamic",
     "named": true,
-    "root": true,
     "fields": {}
   },
   {
-    "type": "hello",
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "dynamic",
+          "named": true
+        },
+        {
+          "type": "static",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "static",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "\\{",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

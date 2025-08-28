@@ -3,8 +3,99 @@
   "name": "arizona",
   "rules": {
     "source_file": {
-      "type": "STRING",
-      "value": "hello"
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_item"
+      }
+    },
+    "_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "dynamic"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "static"
+        }
+      ]
+    },
+    "dynamic": {
+      "type": "SYMBOL",
+      "name": "_dynamic_expression"
+    },
+    "_dynamic_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_dynamic_content"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "_dynamic_content": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[^{}]+"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_dynamic_expression"
+          }
+        ]
+      }
+    },
+    "static": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[^{\\\\]+"
+        },
+        {
+          "type": "STRING",
+          "value": "\\{"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\\"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[^{]"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\\"
+        }
+      ]
     }
   },
   "extras": [

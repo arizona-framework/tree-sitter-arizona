@@ -1,6 +1,6 @@
 /**
  * @file Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code
- * @author William Fank Thomé <will@iamtho.me>
+ * @author William Fank Thomé <willilamthome@hotmail.com>
  * @license  Apache-2.0
  */
 
@@ -11,7 +11,24 @@ module.exports = grammar({
   name: "arizona",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    source_file: $ => repeat($._item),
+
+    _item: $ => choice($.dynamic, $.static),
+
+    dynamic: $ => $._dynamic_expression,
+
+    _dynamic_expression: $ => seq('{', optional($._dynamic_content), '}'),
+
+    _dynamic_content: $ => repeat1(choice(
+      /[^{}]+/,
+      $._dynamic_expression
+    )),
+
+    static: _$ => choice(
+      /[^{\\]+/,
+      '\\{',
+      seq('\\', /[^{]/),
+      '\\'
+    )
   }
 });

@@ -3,7 +3,7 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-arizona
-HOMEPAGE_URL := https://github.com/arizona-framework/arizona_tree_sitter
+HOMEPAGE_URL := https://github.com/arizona-framework/tree-sitter-arizona
 VERSION := 0.1.0
 
 # repository

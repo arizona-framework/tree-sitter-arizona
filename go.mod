@@ -1,4 +1,4 @@
-module github.com/arizona-framework/arizona_tree_sitter
+module github.com/arizona-framework/tree-sitter-arizona
 
 go 1.22
 

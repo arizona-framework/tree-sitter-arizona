@@ -13,13 +13,13 @@ classifiers = [
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed",
 ]
-authors = [{ name = "William Fank Thomé", email = "will@iamtho.me" }]
+authors = [{ name = "William Fank Thomé", email = "willilamthome@hotmail.com" }]
 requires-python = ">=3.10"
 license.text = " Apache-2.0"
 readme = "README.md"
 
 [project.urls]
-Homepage = "https://github.com/arizona-framework/arizona_tree_sitter"
+Homepage = "https://github.com/arizona-framework/tree-sitter-arizona"
 Funding = "https://github.com/sponsors/williamthome"
 
 [project.optional-dependencies]

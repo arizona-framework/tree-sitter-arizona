@@ -1,0 +1,137 @@
+==================
+Case expression
+==================
+
+<div>{case Status of ok -> "Success"; error -> "Failed" end}</div>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Multiple expressions with assignment
+==================
+
+<p>{Foo = foo, Bar = bar, {Foo, Bar}}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Nested case with tuples
+==================
+
+<span>{case {Type, Value} of {ok, V} -> V; {error, _} -> default end}</span>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Complex function call with multiple expressions
+==================
+
+<div>{
+  UserName = get_user_name(),
+  UserId = get_user_id(),
+  format_user({UserId, UserName})
+}</div>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+If expression with nested structures
+==================
+
+<p>{if
+  User =:= undefined -> "Guest";
+  is_list(User#user.roles) -> "User";
+  true -> "Admin"
+end}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Comprehension with nested braces
+==================
+
+<ul>{[{li, format_item(Item)} || Item <- Items, Item =/= undefined]}</ul>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Try-catch with complex matching
+==================
+
+<div>{try
+  {ok, Result} = process_data(Input),
+  format_result(Result)
+catch
+  {error, Reason} -> format_error(Reason);
+  _:_ -> "Unknown error"
+end}</div>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Nested case with record syntax
+==================
+
+<p>{case User#user.status of
+  active -> User#user{last_seen = now()};
+  inactive -> User#user{status = archived}
+end}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Multiple tuple assignments
+==================
+
+<span>{
+  {X, Y} = get_coordinates(),
+  {Width, Height} = get_dimensions(),
+  {X + Width, Y + Height}
+}</span>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
