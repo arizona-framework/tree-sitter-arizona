@@ -10,29 +10,25 @@
 module.exports = grammar({
   name: "arizona",
 
-  extras: _$ => [
-    /\s/,  // whitespace
-  ],
-
   rules: {
     source_file: $ => repeat($._item),
 
-    _item: $ => choice(
-      $.static,
-      $.dynamic
-    ),
+    _item: $ => choice($.dynamic, $.static),
 
-    static: _$ => /[^{}]+/,
+    dynamic: $ => $._dynamic_expression,
 
-    dynamic: $ => seq(
-      '{',
-      optional($._dynamic_expression),
-      '}'
-    ),
+    _dynamic_expression: $ => seq('{', optional($._dynamic_content), '}'),
 
-    _dynamic_expression: $ => repeat1(choice(
+    _dynamic_content: $ => repeat1(choice(
       /[^{}]+/,
-      seq('{', optional($._dynamic_expression), '}')
-    ))
+      $._dynamic_expression
+    )),
+
+    static: _$ => choice(
+      /[^{\\]+/,
+      '\\{',
+      seq('\\', /[^{]/),
+      '\\'
+    )
   }
 });

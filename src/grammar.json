@@ -14,19 +14,19 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "static"
+          "name": "dynamic"
         },
         {
           "type": "SYMBOL",
-          "name": "dynamic"
+          "name": "static"
         }
       ]
     },
-    "static": {
-      "type": "PATTERN",
-      "value": "[^{}]+"
-    },
     "dynamic": {
+      "type": "SYMBOL",
+      "name": "_dynamic_expression"
+    },
+    "_dynamic_expression": {
       "type": "SEQ",
       "members": [
         {
@@ -38,7 +38,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_dynamic_expression"
+              "name": "_dynamic_content"
             },
             {
               "type": "BLANK"
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "_dynamic_expression": {
+    "_dynamic_content": {
       "type": "REPEAT1",
       "content": {
         "type": "CHOICE",
@@ -61,32 +61,41 @@
             "value": "[^{}]+"
           },
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "{"
-              },
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "_dynamic_expression"
-                  },
-                  {
-                    "type": "BLANK"
-                  }
-                ]
-              },
-              {
-                "type": "STRING",
-                "value": "}"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_dynamic_expression"
           }
         ]
       }
+    },
+    "static": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[^{\\\\]+"
+        },
+        {
+          "type": "STRING",
+          "value": "\\{"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\\"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[^{]"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\\"
+        }
+      ]
     }
   },
   "extras": [
