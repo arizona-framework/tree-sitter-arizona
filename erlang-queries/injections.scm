@@ -8,5 +8,4 @@
     fun: (atom) @fun (#eq? @fun "from_string"))
   args: (expr_args
     args: (string) @injection.content
-          (#set! injection.language "arizona")
-          (#set! injection.include-children)))
+          (#set! injection.language "arizona")))
