@@ -24,5 +24,8 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "tree-sitter-cli": "^0.25.8"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.5.0"
   }
 }
