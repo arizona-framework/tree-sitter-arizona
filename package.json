@@ -2,6 +2,20 @@
   "name": "tree-sitter-arizona",
   "version": "0.1.0",
   "description": "Tree-sitter parser for Arizona language (.herl files) - HTML with embedded Erlang code",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arizona-framework/tree-sitter-arizona.git"
+  },
   "scripts": {
     "build": "tree-sitter generate",
     "build:wasm": "tree-sitter build --wasm",
@@ -26,6 +40,10 @@
     "tree-sitter-cli": "^0.25.8"
   },
   "dependencies": {
-    "node-addon-api": "^8.5.0"
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.4"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.0"
   }
 }
