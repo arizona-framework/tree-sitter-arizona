@@ -10,10 +10,17 @@
 module.exports = grammar({
   name: "arizona",
 
+  extras: $ => [
+    $.comment,
+    /\s+/,
+  ],
+
   rules: {
     source_file: $ => repeat($._item),
 
-    _item: $ => choice($.dynamic, $.static),
+    _item: $ => choice($.comment, $.dynamic, $.static),
+
+    comment: _$ => token(seq('{', /\s*%/, repeat(choice(/[^\n}]/, seq('\n', /\s*%/))), '}')),
 
     dynamic: $ => $._dynamic_expression,
 

@@ -1,0 +1,106 @@
+==================
+Single line comment
+==================
+
+{% simple comment }
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
+
+==================
+Comment with spaces around percent
+==================
+
+{ % spaced comment }
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
+
+==================
+Multi-line comment valid
+==================
+
+{% first line
+ % second line }
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
+
+==================
+Multi-line comment invalid
+==================
+
+{% first line
+ second line }
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+HTML comment
+==================
+
+<!-- HTML comment -->
+
+---
+
+(source_file
+  (static))
+
+==================
+Mixed comments and content
+==================
+
+<p>Before</p>
+{% template comment }
+<p>After</p>
+<!-- HTML comment -->
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
+
+==================
+Comment with special characters
+==================
+
+{% comment with {braces} and <tags> }
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
+
+==================
+Empty comment
+==================
+
+{% }
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
