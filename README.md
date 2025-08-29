@@ -54,6 +54,15 @@ This allows other applications to link against the Arizona parser library and us
 
 ### Neovim Setup
 
+#### Option 1: Using the Arizona Neovim Plugin (Recommended)
+
+For the best Arizona development experience with complete language support, syntax highlighting,
+LSP integration, and embedded language features, use the dedicated Neovim plugin:
+
+**[arizona-framework/arizona.nvim](https://github.com/arizona-framework/arizona.nvim)**
+
+#### Option 2: Manual Setup
+
 1. **Configure nvim-treesitter** in your `init.lua`:
 
    ```lua
