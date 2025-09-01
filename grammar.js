@@ -33,9 +33,8 @@ module.exports = grammar({
 
     static: _$ => choice(
       /[^{\\]+/,
-      '\\{',
-      seq('\\', /[^{]/),
-      '\\'
-    )
+      seq('\\', choice('{', '\\')),
+      seq('\\', /./),
+    ),
   }
 });

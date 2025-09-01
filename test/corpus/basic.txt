@@ -19,8 +19,7 @@ Simple Erlang block
 
 (source_file
   (static)
-  (dynamic
-)
+  (dynamic)
   (static))
 
 ==================
@@ -33,8 +32,7 @@ HTML with embedded Erlang
 
 (source_file
   (static)
-  (dynamic
-)
+  (dynamic)
   (static))
 
 ==================
@@ -55,14 +53,11 @@ Complex HTML with multiple Erlang blocks
 
 (source_file
   (static)
-  (dynamic
-)
+  (dynamic)
   (static)
-  (dynamic
-)
+  (dynamic)
   (static)
-  (dynamic
-)
+  (dynamic)
   (static))
 
 ==================
@@ -92,6 +87,5 @@ Nested HTML tags with Erlang
 
 (source_file
   (static)
-  (dynamic
-)
+  (dynamic)
   (static))
