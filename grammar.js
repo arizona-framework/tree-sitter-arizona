@@ -31,11 +31,9 @@ module.exports = grammar({
       $._dynamic_expression
     )),
 
-    static: _$ => choice(
+    static: _$ => token(repeat1(choice(
       /[^{\\]+/,
-      '\\{',
-      seq('\\', /[^{]/),
-      '\\'
-    )
+      seq('\\', choice('{', '\\', /./)),
+    ))),
   }
 });

@@ -1,0 +1,93 @@
+==================
+Escaped opening brace
+==================
+
+\{not_dynamic}
+
+---
+
+(source_file
+  (static))
+
+==================
+Escaped brace in HTML content
+==================
+
+<p>Use \{variable} syntax</p>
+
+---
+
+(source_file
+  (static))
+
+==================
+Mixed escaped and dynamic
+==================
+
+<p>Escaped: \{foo} Dynamic: {bar}</p>
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Escaped brace in comment
+==================
+
+{% comment with \{escaped} braces }
+
+---
+
+(source_file
+  (static)
+  (comment)
+  (static))
+
+==================
+Multiple escapes
+==================
+
+\{first} and \{second}
+
+---
+
+(source_file
+  (static))
+
+==================
+Escaped backslash before brace
+==================
+
+\\{dynamic}
+
+---
+
+(source_file
+  (static)
+  (dynamic)
+  (static))
+
+==================
+Escaped backslash only
+==================
+
+\\
+
+---
+
+(source_file
+  (static))
+
+==================
+Backslash with other characters
+==================
+
+\a and \b content
+
+---
+
+(source_file
+  (static))

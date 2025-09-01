@@ -29,22 +29,13 @@
     }
   },
   {
-    "type": "static",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "\\",
-    "named": false
-  },
-  {
-    "type": "\\{",
-    "named": false
-  },
-  {
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "static",
+    "named": true
   },
   {
     "type": "{",
